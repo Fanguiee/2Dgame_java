@@ -2,10 +2,12 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 public class KeyHandler implements KeyListener{
 	public boolean upPressed, downPressed, leftPressed, rightPressed;
+	//debug
+	public boolean checkDrawTime = false;
+		
 	@Override
 	public void keyTyped(KeyEvent e) {
 	}
@@ -25,6 +27,10 @@ public class KeyHandler implements KeyListener{
 			break;
 		case KeyEvent.VK_D:
 			rightPressed = true;
+			break;
+		//debug
+		case KeyEvent.VK_T:
+			checkDrawTime = !checkDrawTime;
 			break;
 		}
 	}
